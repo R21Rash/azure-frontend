@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Azure Microservice Frontend</title>
+    <meta
+      name="description"
+      content="Static frontend deployed on Azure Static Web Apps for the microservice lab."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="hero">
+        <p class="eyebrow">Azure Static Web Apps</p>
+        <h1>Frontend deployment for the microservice lab</h1>
+        <p class="lede">
+          This page is hosted as a static app and validates the live gateway
+          running in Azure Container Apps.
+        </p>
+      </header>
+
+      <main class="grid">
+        <section class="panel status-panel">
+          <div class="panel-head">
+            <span id="status-badge" class="badge">Checking</span>
+            <button id="refresh-button" class="refresh-button" type="button">
+              Refresh status
+            </button>
+          </div>
+          <h2 id="status-title">Waiting for the first health check</h2>
+          <p id="status-text">
+            The page will call the gateway health endpoint as soon as it loads.
+          </p>
+          <pre id="response-box" class="response-box">Waiting for response...</pre>
+        </section>
+
+        <section class="panel details-panel">
+          <h2>Deployment details</h2>
+          <dl class="details-list">
+            <div>
+              <dt>Gateway base URL</dt>
+              <dd><a id="gateway-link" target="_blank" rel="noreferrer"></a></dd>
+            </div>
+            <div>
+              <dt>Health endpoint</dt>
+              <dd><code id="health-url"></code></dd>
+            </div>
+            <div>
+              <dt>Frontend type</dt>
+              <dd>Plain HTML, CSS, and JavaScript</dd>
+            </div>
+          </dl>
+        </section>
+      </main>
+    </div>
+
+    <script src="config.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
